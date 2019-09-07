@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 
 class RouteCard extends Component {
   state = {  }
+  componentDidMount(){
+    console.log(this.props)
+  }
   render() { 
     return <div>
-      {this.props.route}
+      asdf
     </div>;
   }
 }
