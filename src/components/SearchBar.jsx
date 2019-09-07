@@ -9,7 +9,7 @@ class SearchBar extends Component {
     type="saerch" placeholder="Search your route and see how it performs"
     />
     <InputGroup.Append>
-      <Button variant="outline-secondary">Search</Button>
+      <Button style={{minWidth: '150px'}} variant="primary" className="shadow-sm"><strong>Fly</strong></Button>
     </InputGroup.Append>
   </InputGroup>
     </div> );

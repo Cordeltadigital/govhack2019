@@ -13,7 +13,6 @@ export async function getBuses() {
     }
   })
   .then(res => res.json())
-  .then(res => localStorage.setItem("routes", JSON.stringify(res)));
   
 }
 
