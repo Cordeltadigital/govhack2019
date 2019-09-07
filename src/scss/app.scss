@@ -1,0 +1,11 @@
+h1 {
+  margin-top: 4rem;
+
+  span {
+    font-size: bold;
+
+    &.worst {
+      color: red;
+    }
+  }
+}
