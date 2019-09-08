@@ -7,23 +7,30 @@ import homeHeroImg from '../img/background.jpg'
 import Badge from '../components/Badge'
 
 class Home extends Component {
-  state = { routes: [],
-  currentState: 'NSW' }
-  componentDidMount(){
-    getBuses().then(res => {
-      let routes= res
+  state = { 
+    routes: [],
+    currentState: 'NSW'
+  }
 
-      routes.map(route => {
-        return {
-          ...route,
-          rating: null,
-        }
+  changeState(e){
+    console.log(e)
+    this.setState({currentState: e}, () => {
+      // refetch data
+      getBuses(this.state.currentState)
+      .then(res => {
+        // console.log(res)
+        this.setState({routes: res})
+        return res
       })
-
-      this.setState({routes})
+    })
+    
+  }
+  componentDidMount(){
+    getBuses(this.state.currentState).then(res => {
+      this.setState({routes: res})
       return res
     })
-    .then(res => localStorage.setItem("routes", JSON.stringify(res)));
+    // .then(res => localStorage.setItem("routes", JSON.stringify(res)));
   }
   render() { 
     return ( <div>
@@ -33,12 +40,16 @@ class Home extends Component {
     </div>
 
     <div className="content">
-
+      
+    <Container>
+      <Row>
+        <Col>
     <h1 className="text-center">A little bird told us that these are
-worst and best public transport routes in <DropdownButton className="state-dropdown" onSelect={e => this.setState({currentState: e})} title={this.state.currentState}>
+worst and best public transport routes in <DropdownButton className="state-dropdown" onSelect={e => this.changeState(e)} title={this.state.currentState}>
   <Dropdown.Item eventKey="NSW">NSW</Dropdown.Item>
   <Dropdown.Item eventKey="ACT">ACT</Dropdown.Item>
 </DropdownButton></h1>
+      </Col></Row>
       <Row><Col className="text-center">
        {
          [...Array(5).keys()].map(i => {
@@ -46,7 +57,6 @@ worst and best public transport routes in <DropdownButton className="state-dropd
          })
         }
       </Col></Row>
-    <Container>
       <Row className="mt-5">
         <Col>
           <SearchBar />

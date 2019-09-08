@@ -2,7 +2,9 @@ $primary: #fcb117:root {
   --primary: $primary;
 }
 
-.btn {}
+.btn-round {
+  border-radius: 20px;
+}
 
 .btn-primary {
   color: #252525;
@@ -46,6 +48,7 @@ h1 {
 
 .content {
   margin-top: 200px;
+  min-height: 100vh;
 }
 
 .hero {
@@ -79,6 +82,17 @@ h1 {
 }
 
 .route-card {
+  color: currentColor;
+  text-decoration: none;
+  display: block;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: currentColor;
+    background: #efefef;
+  }
+
   background: white;
   border: 1px solid #dbdee5;
   margin-top: -1px;
@@ -122,5 +136,78 @@ h1 {
   &.r-5 {
     color: #40a664;
   }
+}
 
+.bg-rating {
+  color: white;
+
+  &.r-1 {
+    background: #df0a12;
+  }
+
+  &.r-2 {
+    background: #f97b2f;
+  }
+
+  &.r-3 {
+    background: #fbb017;
+  }
+
+  &.r-4 {
+    background: #71bf43;
+  }
+
+  &.r-5 {
+    background: #40a664;
+  }
+}
+
+.footer {
+  background: #262626;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  padding: 64px 0;
+  margin-top: 200px;
+}
+
+.route-title {
+  p {
+    font-size: 36px;
+  }
+
+  .badge {
+    img {
+      width: 150px;
+    }
+  }
+}
+
+.score-details {
+  margin-top: 200px;
+
+  .score-card {
+    background: white;
+    padding: 46px 20px;
+    margin: 20px;
+
+    h3 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .score {
+
+      .circle {
+        margin-left: auto;
+        border-radius: 50%;
+        width: 140px;
+        height: 140px;
+        text-align: center;
+        line-height: 140px;
+        font-size: 48px;
+        font-weight: bold;
+      }
+    }
+  }
 }

@@ -2,6 +2,10 @@
   --primary: $primary;
 }
 
+.btn-round {
+  border-radius: 20px;
+}
+
 .btn-primary {
   color: #252525;
   background-color: #fcb117;
@@ -42,6 +46,7 @@ h1 span.worst {
 
 .content {
   margin-top: 200px;
+  min-height: 100vh;
 }
 
 .hero {
@@ -75,10 +80,19 @@ h1 span.worst {
 }
 
 .route-card {
+  color: currentColor;
+  text-decoration: none;
+  display: block;
   background: white;
   border: 1px solid #dbdee5;
   margin-top: -1px;
   padding: 50px 20px;
+}
+
+.route-card:hover, .route-card:focus {
+  text-decoration: none;
+  color: currentColor;
+  background: #efefef;
 }
 
 .route-card .badge img {
@@ -114,5 +128,72 @@ h1 span.worst {
 
 .color-rating.r-5 {
   color: #40a664;
+}
+
+.bg-rating {
+  color: white;
+}
+
+.bg-rating.r-1 {
+  background: #df0a12;
+}
+
+.bg-rating.r-2 {
+  background: #f97b2f;
+}
+
+.bg-rating.r-3 {
+  background: #fbb017;
+}
+
+.bg-rating.r-4 {
+  background: #71bf43;
+}
+
+.bg-rating.r-5 {
+  background: #40a664;
+}
+
+.footer {
+  background: #262626;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  padding: 64px 0;
+  margin-top: 200px;
+}
+
+.route-title p {
+  font-size: 36px;
+}
+
+.route-title .badge img {
+  width: 150px;
+}
+
+.score-details {
+  margin-top: 200px;
+}
+
+.score-details .score-card {
+  background: white;
+  padding: 46px 20px;
+  margin: 20px;
+}
+
+.score-details .score-card h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.score-details .score-card .score .circle {
+  margin-left: auto;
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  text-align: center;
+  line-height: 140px;
+  font-size: 48px;
+  font-weight: bold;
 }
 /*# sourceMappingURL=app.css.map */
