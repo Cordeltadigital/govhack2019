@@ -9,8 +9,7 @@ class RouteList extends Component {
       <Row noGutters={true}>
       {
         this.props.routes.map( (route, i) => {
-
-          return <Col xs={6} xl={3}  key={i}><RouteCard route={route}></RouteCard></Col>
+          return <Col xs={6} xl={3}  key={i}><RouteCard key={'card'+i} route={route}></RouteCard></Col>
          } )
       }
       </Row>

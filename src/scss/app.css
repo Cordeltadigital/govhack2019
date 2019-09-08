@@ -2,6 +2,10 @@
   --primary: $primary;
 }
 
+.btn {
+  font-weight: bold;
+}
+
 .btn-round {
   border-radius: 20px;
 }
@@ -75,8 +79,16 @@ h1 span.worst {
   font-size: 36px;
 }
 
-.routes-grid {
+.tabs {
   margin-top: 180px;
+}
+
+.tabs .btn {
+  width: 200px;
+}
+
+.routes-grid {
+  margin-top: 80px;
 }
 
 .route-card {

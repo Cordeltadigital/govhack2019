@@ -1,5 +1,11 @@
-$primary: #fcb117:root {
+$primary: #fcb117;
+
+:root {
   --primary: $primary;
+}
+
+.btn {
+  font-weight: bold;
 }
 
 .btn-round {
@@ -77,8 +83,17 @@ h1 {
   }
 }
 
-.routes-grid {
+.tabs {
   margin-top: 180px;
+
+  .btn {
+    width: 200px;
+  }
+
+}
+
+.routes-grid {
+  margin-top: 80px;
 }
 
 .route-card {

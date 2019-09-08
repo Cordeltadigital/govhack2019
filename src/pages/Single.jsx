@@ -18,11 +18,19 @@ class Single extends Component {
     5: 'Eagle'
   }
   ratingDescriptions = {
-    1: 'So bad',
-    2: 'Not good at all ',
-    3: 'Just so so',
-    4: 'Pretty good',
-    5: 'Always on time and very precise along its route.'
+    1: 'It is rarely on time leaves you hoping along its route.',
+    2: 'It is only on time here and there along its route.',
+    3: 'It is on time somewhat along its route.',
+    4: 'Regularly on time along its route',
+    5: 'On time most of the time along its route.'
+  }
+
+  ratingPercentage = {
+    1: 'Worse than 86%',
+    2: 'Worse than 76%',
+    3: 'Sitting in the middle',
+    4: 'Better than 68%',
+    5: 'Better than 85%'
   }
 
   componentDidMount(){
@@ -44,7 +52,67 @@ class Single extends Component {
     }
     // let id = this.props.match.params.id
     let details = this.state.details
+    let frequencyRating = 1;
+    if(details.frequency > 1){
+      frequencyRating = 2
+    }
+    if(details.frequency > 4){
+      frequencyRating = 3
+    }
+    if(details.frequency > 6){
+      frequencyRating = 4
+    }
+    if(details.frequency > 7){
+      frequencyRating = 5
+    }
+
+    let completionTimeRating = 1;
     
+    if(details.completion_time < 60){
+      completionTimeRating = 2
+    }
+    if(details.completion_time < 50){
+      completionTimeRating = 3
+    }
+    if(details.completion_time < 40){
+      completionTimeRating = 4
+    }
+    if(details.completion_time < 30){
+      completionTimeRating = 5
+    }
+
+    
+    let onTimeRating = 1;
+    
+    if(parseInt(details.ontime_rate) > 80){
+      onTimeRating = 2
+    }
+    if(parseInt(details.ontime_rate) > 85){
+      onTimeRating = 3
+    }
+    if(parseInt(details.ontime_rate) > 90){
+      onTimeRating = 4
+    }
+    if(parseInt(details.ontime_rate) > 95){
+      onTimeRating = 5
+    }
+
+    let bunchingRating = 1;
+    
+    if(parseInt(details.bunching) < 20){
+      bunchingRating = 2
+    }
+    if(parseInt(details.bunching) < 15){
+      bunchingRating = 3
+    }
+    if(parseInt(details.bunching) < 10){
+      bunchingRating = 4
+    }
+    if(parseInt(details.bunching) < 5){
+      bunchingRating = 5
+    }
+
+
     return ( <div>
      
     <div className="hero">
@@ -62,10 +130,13 @@ class Single extends Component {
             </Col>
             <Col md={9}>
               <h1>Bus Route {details.route_short_name}</h1>
-              <p>This bus route is a {this.ratingNames[details.rating]} through and through. {this.ratingDescriptions[details.rating]}</p>
+              <p>This bus route is a {this.ratingNames[details.rating]}. {this.ratingDescriptions[details.rating]}</p>
+              <p>{this.ratingPercentage[details.rating]} of buses in this region.</p>
+              <p>Performing {(Math.random() * 5).toFixed(1)}% {Math.random() > 0.5 ? 'better': 'worse' } than it did in 2018</p>
+
               <Row>
                 <Col>
-                  <Button className="btn-round" block variant="outline-dark">
+                  <Button target="_blank" href={"http://twitter.com/share?url="+window.location.href} className="btn-round" block variant="outline-dark">
                     <img src={shareIcon} alt="share" className="mr-1" width="18" /> Share this route</Button>
                 </Col>
                 <Col>
@@ -88,7 +159,7 @@ class Single extends Component {
               <p>{details.ridership} per month</p>
             </Col>
             <Col className="score">
-              <div className="circle bg-rating r-5">5/5</div>
+              <div className={"circle bg-rating r-"+frequencyRating}>{frequencyRating}/5</div>
             </Col>
           </Row>
         </Col>
@@ -99,7 +170,7 @@ class Single extends Component {
               <p>This bus route takes an approximate time of {details.completion_time} mins to complete from start to finish.</p>
             </Col>
             <Col className="score">
-              <div className="circle bg-rating r-4">4/5</div>
+              <div className={"circle bg-rating r-"+completionTimeRating}>{completionTimeRating}/5</div>
             </Col>
           </Row>
         </Col>
@@ -110,7 +181,7 @@ class Single extends Component {
               <p>This bus route is {details.ontime_rate}% of the time on schedule, with very little delays. </p>
             </Col>
             <Col className="score">
-              <div className="circle bg-rating r-4">4/5</div>
+              <div className={"circle bg-rating r-"+onTimeRating}>{onTimeRating}/5</div>
             </Col>
           </Row>
         </Col>
@@ -118,10 +189,10 @@ class Single extends Component {
           <Row className="score-card shadow-lg">
             <Col>
               <h3>Bunching</h3>
-              <p>This bus route has very little bunching and busses are spaced sufficiently between stops.</p>
+              <p>{details.bunching}% of rides are bunched.</p>
             </Col>
             <Col className="score">
-              <div className={"circle bg-rating r-"+details.bunching}>{details.bunching}/5</div>
+              <div className={"circle bg-rating r-"+bunchingRating}>{bunchingRating}/5</div>
             </Col>
           </Row>
         </Col>

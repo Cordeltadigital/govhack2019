@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
+import dodo from '../img/dodo.svg'
+import duck from '../img/duck.svg'
+import pigeon from '../img/pigeon.svg'
+import parrot from '../img/parrot.svg'
+import eagle from '../img/eagle.svg'
 class Badge extends Component {
-  state = {bird: ''}
+  
+  birds = [dodo, duck, pigeon, parrot, eagle]
   componentDidMount(){
-    let birds = ['dodo', 'duck', 'pigeon','parrot', 'eagle']
-    let index = Math.round(this.props.rating) -1
-    if(this.props.rating){
-      this.setState({bird: birds[index] })
-    }
+    console.log(dodo)
   }
 
   render() { 
-    if(!this.state.bird || this.state.bird.length === 0){
+    if(!this.props.rating){
       return null
     }
+    
+    let index = Math.round(this.props.rating) -1
+    console.log(this.birds[index])
     return <div className="badge">
-      <img src={require('../img/'+this.state.bird+'.svg')} alt={this.props.bird} />
+      <img src={this.birds[index]} alt={this.props.bird} />
     </div>;
   }
 }
