@@ -53,7 +53,7 @@ class Single extends Component {
     // let id = this.props.match.params.id
     let details = this.state.details
     let frequencyRating = 1;
-    if(details.frequency > 1){
+    if(details.frequency > 2){
       frequencyRating = 2
     }
     if(details.frequency > 4){
@@ -62,38 +62,38 @@ class Single extends Component {
     if(details.frequency > 6){
       frequencyRating = 4
     }
-    if(details.frequency > 7){
+    if(details.frequency > 8){
       frequencyRating = 5
     }
 
     let completionTimeRating = 1;
     
-    if(details.completion_time < 60){
+    if(details.completion_time < 65){
       completionTimeRating = 2
     }
-    if(details.completion_time < 50){
+    if(details.completion_time < 55){
       completionTimeRating = 3
     }
-    if(details.completion_time < 40){
+    if(details.completion_time < 45){
       completionTimeRating = 4
     }
-    if(details.completion_time < 30){
+    if(details.completion_time < 35){
       completionTimeRating = 5
     }
 
     
     let onTimeRating = 1;
     
-    if(parseInt(details.ontime_rate) > 80){
+    if(parseInt(details.ontime_rate) > 60){
       onTimeRating = 2
     }
-    if(parseInt(details.ontime_rate) > 85){
+    if(parseInt(details.ontime_rate) > 70){
       onTimeRating = 3
     }
-    if(parseInt(details.ontime_rate) > 90){
+    if(parseInt(details.ontime_rate) > 80){
       onTimeRating = 4
     }
-    if(parseInt(details.ontime_rate) > 95){
+    if(parseInt(details.ontime_rate) > 90){
       onTimeRating = 5
     }
 
