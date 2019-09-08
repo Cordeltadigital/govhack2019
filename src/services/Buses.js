@@ -17,7 +17,17 @@ export async function getBuses(state) {
 }
 
 export async function getRouteDetails(id) {
-  // return details
+  let state = window.localStorage.getItem('currentState')
+  if(!state) {
+    state = 'NSW'
+  }
+  return fetch("https://govhack.cordelta.digital/api/route-detail.php?state="+state+'&id='+id, {
+    method: 'GET',
+    headers:{
+      'Content-Type': 'application/json',
+    }
+  })
+  .then(res => res.json())
 }
 
 // function getStopRoute(stopID){

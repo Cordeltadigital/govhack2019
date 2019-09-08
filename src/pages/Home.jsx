@@ -13,15 +13,16 @@ class Home extends Component {
   }
 
   changeState(e){
-    console.log(e)
     this.setState({currentState: e}, () => {
       // refetch data
-      getBuses(this.state.currentState)
+      getBuses(e)
       .then(res => {
         // console.log(res)
         this.setState({routes: res})
         return res
       })
+
+      window.localStorage.setItem('currentState', e)
     })
     
   }
