@@ -189,6 +189,10 @@ h1 {
 .route-title {
   p {
     font-size: 36px;
+
+    &.smaller {
+      font-size: 22px;
+    }
   }
 
   .badge {

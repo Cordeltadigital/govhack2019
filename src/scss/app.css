@@ -179,6 +179,10 @@ h1 span.worst {
   font-size: 36px;
 }
 
+.route-title p.smaller {
+  font-size: 22px;
+}
+
 .route-title .badge img {
   width: 150px;
 }

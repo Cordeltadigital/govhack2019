@@ -18,7 +18,7 @@ class Single extends Component {
     5: 'Eagle'
   }
   ratingDescriptions = {
-    1: 'It is rarely on time leaves you hoping along its route.',
+    1: 'It is rarely on time and sometimes feels like it\'s extinct.',
     2: 'It is only on time here and there along its route.',
     3: 'It is on time somewhat along its route.',
     4: 'Regularly on time along its route',
@@ -131,10 +131,10 @@ class Single extends Component {
             <Col md={9}>
               <h1>Bus Route {details.route_short_name}</h1>
               <p>This bus route is a {this.ratingNames[details.rating]}. {this.ratingDescriptions[details.rating]}</p>
-              <p>{this.ratingPercentage[details.rating]} of buses in this region.</p>
-              <p>Performing {(Math.random() * 5).toFixed(1)}% {Math.random() > 0.5 ? 'better': 'worse' } than it did in 2018</p>
+              <p className="smaller"><strong>{this.ratingPercentage[details.rating]}</strong> of buses in this region.</p>
+              <p className="smaller">Performing <strong>{(Math.random() * 5).toFixed(1)}% {Math.random() > 0.5 ? 'better': 'worse' }</strong> than it did in 2018</p>
 
-              <Row>
+              <Row className="mt-5">
                 <Col>
                   <Button target="_blank" href={"http://twitter.com/share?url="+window.location.href} className="btn-round" block variant="outline-dark">
                     <img src={shareIcon} alt="share" className="mr-1" width="18" /> Share this route</Button>
