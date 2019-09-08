@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import {getRouteDetails} from '../services/Buses'
+import {getRouteDetails} from '../services/Buses'
 import detailsHeroImg from '../img/background-details.jpg'
 
 import {Row, Col, Container, Button} from 'react-bootstrap'
@@ -54,7 +54,7 @@ class Single extends Component {
       </Row>
       <Row className="score-details">
         <Col md={6}>
-          <Row className="score-card shadow-sm">
+          <Row className="score-card shadow-lg">
             <Col>
               <h3>Frequency</h3>
               <p>7.5 busses per hour</p>
@@ -68,7 +68,7 @@ class Single extends Component {
           </Row>
         </Col>
         <Col md={6}>
-          <Row className="score-card shadow-sm">
+          <Row className="score-card shadow-lg">
             <Col>
               <h3>Completion time</h3>
               <p>This bus route takes an approximate time of 33 mins to complete from point A to point B.</p>
@@ -79,7 +79,7 @@ class Single extends Component {
           </Row>
         </Col>
         <Col md={6}>
-          <Row className="score-card shadow-sm">
+          <Row className="score-card shadow-lg">
             <Col>
               <h3>On-time performance</h3>
               <p>This bus route is 95% of the time on schedule, with very little delays. </p>
@@ -90,7 +90,7 @@ class Single extends Component {
           </Row>
         </Col>
         <Col md={6}>
-          <Row className="score-card shadow-sm">
+          <Row className="score-card shadow-lg">
             <Col>
               <h3>Bunching</h3>
               <p>This bus route has very little bunching and busses are spaced sufficiently between stops.</p>

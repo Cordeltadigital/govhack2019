@@ -7,7 +7,7 @@ class Header extends Component {
   render() { 
     return ( 
       <Navbar className="header" variant="dark">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img
             alt="Home"
             src={logo}

@@ -196,4 +196,26 @@ h1 span.worst {
   font-size: 48px;
   font-weight: bold;
 }
+
+.search-bar {
+  position: relative;
+}
+
+.fuzzy-search {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+}
+
+.fuzzy-search .suggestion-item {
+  background: white;
+  padding: 10px;
+}
+
+.fuzzy-search .suggestion-item:hover {
+  background: #efefef;
+  font-weight: bold;
+  cursor: pointer;
+}
 /*# sourceMappingURL=app.css.map */

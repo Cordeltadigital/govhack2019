@@ -58,8 +58,8 @@ worst and best public transport routes in <DropdownButton className="state-dropd
         }
       </Col></Row>
       <Row className="mt-5">
-        <Col>
-          <SearchBar />
+        <Col md={{ span: 8, offset: 2 }} >
+          <SearchBar routes={this.state.routes} />
         </Col>
       </Row>
 
